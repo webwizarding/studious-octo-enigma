@@ -27,11 +27,7 @@ interface ProjectsProps {
  * @returns {JSX.Element} The rendered projects section.
  */
 const Projects = ({ data, keywords }: ProjectsProps) => {
-  const items = Array.isArray(data)
-    ? data.filter((p) =>
-        ["nitrous", "hive"].includes(p.title.toLowerCase()),
-      )
-    : [];
+  const items = Array.isArray(data) ? data : [];
 
   return (
     <section id="projects" className="mb-16">
