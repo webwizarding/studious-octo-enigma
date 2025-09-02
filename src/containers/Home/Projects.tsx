@@ -39,7 +39,7 @@ const Projects = ({ data, keywords }: ProjectsProps) => {
   const items = Array.isArray(data)
     ? ALLOWED_TITLES.map((title) =>
         data.find((project): project is Project => project.title === title),
-      ).filter(Boolean)
+      ).filter((project): project is Project => Boolean(project))
     : [];
 
   return (
