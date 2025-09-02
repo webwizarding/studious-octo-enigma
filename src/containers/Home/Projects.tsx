@@ -20,6 +20,15 @@ interface ProjectsProps {
   keywords?: string[];
 }
 
+// Ordered list of projects that should be displayed on the site
+const ALLOWED_TITLES = [
+  "Nitrous",
+  "Hive",
+  "AvacadoBro",
+  "Terylene & SkyIsYours",
+  "Crimp-dle",
+];
+
 /**
  * @component Projects
  * @description Renders projects section with enhanced cards and keyword emphasis.
@@ -27,7 +36,11 @@ interface ProjectsProps {
  * @returns {JSX.Element} The rendered projects section.
  */
 const Projects = ({ data, keywords }: ProjectsProps) => {
-  const items = Array.isArray(data) ? data : [];
+  const items = Array.isArray(data)
+    ? ALLOWED_TITLES.map((title) =>
+        data.find((project): project is Project => project.title === title),
+      ).filter(Boolean)
+    : [];
 
   return (
     <section id="projects" className="mb-16">
