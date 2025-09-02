@@ -1,0 +1,33 @@
+{
+  "software": {
+    "Essentials": [
+      {
+        "title": "Orion",
+        "description": "Web browser focused on privacy.",
+        "link": "https://browser.kagi.com/",
+        "price": "Free",
+        "brewInstall": "brew install --cask orion",
+        "operatingSystem": "macOS"
+      }
+    ],
+    "General": [
+      {
+        "title": "Things",
+        "description": "Task manager.",
+        "link": "https://culturedcode.com/things/",
+        "price": "Paid",
+        "operatingSystem": "macOS"
+      }
+    ],
+    "Utilities": [
+      {
+        "title": "Dropover",
+        "description": "Drag & drop shelf for macOS.",
+        "link": "https://dropoverapp.com/",
+        "price": "Paid",
+        "operatingSystem": "macOS"
+      }
+    ],
+    "Creatives": []
+  }
+}

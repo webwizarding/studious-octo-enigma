@@ -1,0 +1,189 @@
+/**
+ * @file app/globals.css
+ * @author Jeremy @dvhsh (https://computations.cloud)
+ *
+ * @created Wed, Aug 20 2025
+ * @updated Wed, Aug 20 2025
+ *
+ * @description
+ * Global styles with Tailwind directives and custom CSS.
+ */
+
+/* Fonts */
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/open-sans-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/open-sans-latin-600-normal.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/open-sans-latin-700-normal.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/open-sans-latin-800-normal.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+@import "@catppuccin/tailwindcss/mocha.css";
+
+/* Accent hook for dynamic accent color */
+:root {
+  --accent-color: var(--ctp-pink);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family:
+      "Open Sans",
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      Segoe UI,
+      Roboto,
+      Arial;
+    @apply bg-ctp-base text-ctp-text;
+  }
+}
+
+@layer utilities {
+  /* Dynamic accent color classes */
+  .bg-accent {
+    background-color: var(--accent-color);
+  }
+  .text-accent {
+    color: var(--accent-color);
+  }
+  .border-accent {
+    border-color: var(--accent-color);
+  }
+  .ring-accent {
+    --tw-ring-color: var(--accent-color);
+  }
+}
+
+@layer components {
+  .animate-wave {
+    @apply inline-block;
+    animation: wave 2.5s ease-in-out infinite;
+    transform-origin: 70% 70%;
+  }
+
+  .animate-spin-slow {
+    animation: spin 4s linear infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+  }
+
+  .wavy-title .wavy-letter {
+    @apply inline-block;
+    animation: float 3s ease-in-out infinite alternate;
+  }
+
+  .blog-card-container {
+    @apply opacity-0 -translate-x-12;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .shadow-brutal {
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Keyframes */
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(14deg);
+  }
+  80% {
+    transform: rotate(-4deg);
+  }
+}
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  * {
+    color: black !important;
+    border-color: #ccc !important;
+    background-color: transparent !important;
+  }
+
+  .print-accent {
+    color: #333 !important;
+    font-weight: bold !important;
+  }
+
+  .print-subtle {
+    color: #666 !important;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "skills": {
+    "programmingLanguages": ["python", "javascript", "typescript"],
+    "frameworks": ["nextjs", "react", "tailwindcss"],
+    "tools": ["git", "docker"],
+    "cloud": ["vercel", "aws"]
+  }
+}

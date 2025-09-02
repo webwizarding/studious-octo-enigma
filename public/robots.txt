@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://computations.cloud/sitemap.xml
+

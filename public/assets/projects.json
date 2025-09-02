@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "title": "computations.cloud",
+      "description": "Personal portfolio showcasing skills and projects.",
+      "technologies": ["Next.js", "Tailwind CSS", "TypeScript"],
+      "demoLink": "https://computations.cloud",
+      "sourceLink": "https://github.com/webwizarding/computations.cloud"
+    },
+    {
+      "title": "AvacadoBro",
+      "description": "A Chrome extension that helps consumers make healthier choices when shopping on Amazon. Longhorn Robotics 2nd Annual Hackathon winner.",
+      "technologies": ["JavaScript", "HTML", "CSS"],
+      "demoLink": "https://devpost.com/software/glycemic-index-tracker",
+      "sourceLink": "https://github.com/webwizarding/avocadobro-"
+    },
+    {
+      "title": "Terylene & SkyIsYours",
+      "description": "Mirai with Decentralized Botnet architecture paired nicely with A Scanner + Bruter with work distribution architecture as a joint project part of Polysphere.",
+      "technologies": ["Go"],
+      "sourceLinks": [
+        "https://github.com/tcpfin-dev/terylene",
+        "https://github.com/tcpfin-dev/SkyIsYours"
+      ]
+    },
+    {
+      "title": "Crimp-dle",
+      "description": "Wordle-like guessing game that has players guess the difficulties of climbing problems and routes. Built with Vercel, Next.js + Vite, and the Google Developer API.",
+      "technologies": ["Vercel", "Next.js", "Vite", "Google Developer API"],
+      "demoLink": "https://crimp-dle.vercel.app/?mode=daily"
+    }
+  ]
+}
