@@ -14,6 +14,7 @@
 import { motion } from "motion/react";
 import ProjectCard from "@/components/card/ProjectCard";
 import type { Project } from "@/types";
+import localProjectsData from "@/public/assets/projects.json";
 
 interface ProjectsProps {
   data: Project[];
@@ -29,6 +30,9 @@ const ALLOWED_TITLES = [
   "Crimp-dle",
 ];
 
+// Static projects bundled with the site
+const LOCAL_PROJECTS = (localProjectsData as { projects: Project[] }).projects;
+
 /**
  * @component Projects
  * @description Renders projects section with enhanced cards and keyword emphasis.
@@ -36,11 +40,16 @@ const ALLOWED_TITLES = [
  * @returns {JSX.Element} The rendered projects section.
  */
 const Projects = ({ data, keywords }: ProjectsProps) => {
-  const items = Array.isArray(data)
-    ? ALLOWED_TITLES.map((title) =>
-        data.find((project): project is Project => project.title === title),
-      ).filter((project): project is Project => Boolean(project))
-    : [];
+  const allProjects = Array.isArray(data)
+    ? [...data, ...LOCAL_PROJECTS]
+    : LOCAL_PROJECTS;
+
+  const items = ALLOWED_TITLES.map((title) =>
+    allProjects.find(
+      (project): project is Project =>
+        project.title.toLowerCase() === title.toLowerCase(),
+    ),
+  ).filter((project): project is Project => Boolean(project));
 
   return (
     <section id="projects" className="mb-16">
